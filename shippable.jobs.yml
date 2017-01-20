@@ -8,6 +8,7 @@ jobs:
       - TASK:
         - script: echo "running a task"
     on_success:
+      - script: env
       - script: echo "pipeline-init finished - success"
 
 
