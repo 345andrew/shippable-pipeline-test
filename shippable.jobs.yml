@@ -10,6 +10,7 @@ jobs:
     on_success:
       - script: echo "pipeline-init finished - success"
       
+
   - name: pipeline-stage-2
     type: runSh
     on_start:
