@@ -3,8 +3,10 @@ language: node_js
 node_js:
   - "6.9.1"
 
-services:
-  - mongodb
+env:
+  global:
+    - secure: RAZ0sUb0bHZWSj/XO/WEiG43qGcaNV0OW148MZs0k889N9JisI3fqE87XM5NpZ5x8FTCtwlqffXkbUdv809wVJCO9tDRFzFlAi+pi6/N3A4YRWCHTrusKlTpJp3CSM1Ror3iS/NuT7uTVfQMjhF+3cSzqs5+ugP/fO3ncE7lf3SU8SvVEDanGOH46Pfk2CjgYvOJDP+gAo32xeK/q0gC0okBjVON24s0ri8XwYGz9LrVvA91T72o3Jz4zyDg0juawdY0UbBiXCsAA+nD6v4IpX8bp5Di7LCV6yALRAXd30fYIc5MNn4Y7juv7Cse1oz0JIrAXDfn5e0Z05+8uoxGdA==
+    - secure: t/f6DWKGOOz3XLOeC0E5LBy0XnG+SUSLR+odXGmH3lVFtpD0Hs5GWgUVQ4Y+rhKseTacV++XSayEFhWL4OQPAqqhpyXsl5UOnHBV6/PUgTk4f0+pPOSrh2EtkU1h+lteSZSBMbtNLDzXHPGGFd48Cypp3hgBVjoh+xiReRLNNt/Dh+REh4D5eeJ0aW6siJ37VIxu0UcLWaWxA2DAheWkVkFr+vV43Yukm1IX7OM02oHiuD2bEvDCa0ohO5y2QYD7q9OfcqUt7VqrR7CCkCBwZ6kdF4mABCANtjMXmeemBfLlw+L0gcch5bWgehE8Wr1137f8J8Oa+Bxrbr/YPvNmAA==
 
 branches:
   only:
@@ -18,4 +20,8 @@ build:
     - sudo pip install awscli
   ci:
     - npm install --unsafe-perm
+    - npm run build
+
   post_ci:
+# Push the output artefacts to S3.
+    - aws s3 sync ./out s3://cloco-build-output/shippable-pipeline
