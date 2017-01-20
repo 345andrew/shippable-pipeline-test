@@ -7,3 +7,5 @@ jobs:
       - IN: github-repo
       - TASK:
         - script: echo "running a task"
+    on_success:
+      - script: echo "finished - success"
