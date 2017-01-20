@@ -1,0 +1,27 @@
+{
+  "name": "shippable-pipeline-test",
+  "version": "1.0.0",
+  "description": "A test project for configuring a shippable release pipeline",
+  "main": "app.js",
+  "scripts": {
+    "build": "gulp zip-output",
+    "gulp": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/345andrew/shippable-pipeline-test.git"
+  },
+  "author": "345andrew",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/345andrew/shippable-pipeline-test/issues"
+  },
+  "homepage": "https://github.com/345andrew/shippable-pipeline-test#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-gzip": "^1.4.0",
+    "gulp-tar": "^1.9.0"
+  }
+}
