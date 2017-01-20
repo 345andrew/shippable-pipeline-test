@@ -7,6 +7,8 @@ env:
   global:
     - secure: F2VbEYcO0QoYhHY9XQtz+LNVay+pN/1fcHUi7PqQb0yv4TKcyrlTy+Qumrnp2juw5TCOspCkjH45TNObZltI7RlMvwxxluPB7xxwCQquVC67PF1xHoqv6X1oo6iiV7ZGdhSxgswig6j5t40Mm+sfTqCeMXhvcpr7t+lFzjNSrsGgbNx928JT8gVNL9JuwJzvtEp5KNZMI9h+X3kVk7nLl7T5CDlfosXbTh34b+2WC2kDpBeZEe46d1/4G4iZl7cXUsbV7aHEVJXyQeeaI7krmFEFVH4LP85RF6/uTX2NXyhu6H0DDHeZnNcK1ur39hLFcuIV8kln0Dx4LbvvR4B06A==
     - secure: qKRFVadjhdAEC51JUWBwP6UDaNlPn6nvloReKLlhG5UzgXMKhC4QjRKak8YTliLmZTBc0VTMkOvyr8HVUU62N9Z8UFF2R11AYUajYfKVK0TURmERdvRNvfIriOkB9DIaasqLLG9JgOuOD3/81oVzZmwySYiqlsuFm4qW9un18TEV/kzwTb+oE915oVqqkxkk1tS3Cfx/lVLIlvZH7Kiy36uX97QaYZ5omCC1VE6APBxPzEmLhcfi1TFhZy3cYbJMte49c8ZzeqA3SOhUxv1dH8wwAWtxuEGOVOmnS3NW6cTSGvF3g3FKB0suSRNyg7pUTt9HP1nLw3xid254OfdGkQ==
+    - secure: LmWoFV1QakzPPMmvRV3PaBbz8M26CoZo/IF3J7pogvYTktQVPEQ/G3t+XKCoPN7oVpQJwzR2HTRLOxegSd8IM1JMzezV3z/z/xaQtG3Yivy0G10eOzHlrwn4Mx6/JDki/J/x2pwCPuRfKoOjnl8R6D/gw+oPZ52hxcV9c4t6heCQzGF8lZtxe+nMf6CGdAk7TXzUHpyEU8y7KMyREQaxTXJ4Tgz0N2gEzJZCvgjwKHc12pgVnntr7Z5Hx6xktde0DhXXqn1mJZ4jQZCjKac1t2RLf5Lxqyz2jv9BbPEJMqTrM+gb/8NKkzXi2+jPrDncZp91d4gBMlUdvST3Eo+9cw==
+    - secure: AuzkcMF+IOrWoJn8bmHpuXRamyA9ythhCq+eShBxml6RNeW/MgR75c5hzmtm5TqAAFZAOl6aCy9u1UI1CoDX7Xks4FOWib6mb1RjkLTN61pghBo7uN8QGX6AlYn9VyAoWBo6GCvivkbGsrU3lyVspTQOTh1Haxph8ZvDK6f5HiknArU9ijNqF7kRQcwOKrs8zP5NM89GUk0aGTRFhcqyprx3pAmoYSZKZm3rxu2/yT+UpgIdvbYN0rog17K33yH0E9H14BD+WaKqL4zBA6/POQJrmDRlM/Ty0zX6B1ZvvcyXpXG2yaGMPOHv3rov0vQHB1NNEHldS7cEQHZLsW661g==
 
 branches:
   only:
@@ -24,4 +26,4 @@ build:
 
   post_ci:
 # Push the output artefacts to S3.
-    - aws s3 sync ./out s3://cloco-build-output/shippable-pipeline
+    - aws s3 sync ./out s3://$S3_BUCKET/$S3_FOLDER
