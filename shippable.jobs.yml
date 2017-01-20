@@ -4,5 +4,6 @@ jobs:
     on_start:
       - script: echo "starting pipeline-init job"
     steps:
+      - IN: github-repo
       - TASK:
         - script: echo "running a task"
