@@ -1,7 +1,7 @@
 resources:
   - name: github-repo
     type: gitRepo
-    integration: github
+    integration: github-repo
     pointer:
       sourceName: 345andrew/shippable-pipeline-test
       branch: master
