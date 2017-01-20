@@ -1,0 +1,8 @@
+jobs:
+  - name: pipeline-init
+    type: runSh
+    on_start:
+      - script: echo "starting pipeline-init job"
+    steps:
+      - TASK:
+        - script: echo "running a task"
