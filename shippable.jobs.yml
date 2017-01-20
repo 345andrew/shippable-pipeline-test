@@ -8,4 +8,15 @@ jobs:
       - TASK:
         - script: echo "running a task"
     on_success:
-      - script: echo "finished - success"
+      - script: echo "pipeline-init finished - success"
+      
+  - name: pipeline-stage-2
+    type: runSh
+    on_start:
+      - script: echo "starting pipeline-stage-2 job"
+    steps:
+      - IN: pipeline-init
+      - TASK:
+        - script: echo "running a task"
+    on_success:
+      - script: echo "pipeline-stage-2 finished - success"
